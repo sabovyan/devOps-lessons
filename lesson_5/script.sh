@@ -1,4 +1,4 @@
-#!bin/hash
+#!/bin/bash
 
 echo "enter a name"
 read name
