@@ -2,7 +2,7 @@
 
 # utils
 list() {
-ls -lah $1
+ls -lah "$1"
 sleep 2s
 }
 
@@ -14,9 +14,10 @@ echo "-$(tput setaf 1)-------------------------$(tput setaf 7)"
 
 
 # Change directory owner and group like <unsername>:root
+user=$(whoami)
 
 mkdir dir
-sudo chown ${whoami}:root dir
+sudo chown "${user}":root dir
 list
 rm -r dir
 list

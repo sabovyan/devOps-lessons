@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "enter a name"
-read name
+read -r name
 
 if [ -z "${name}" ]
   then
@@ -16,28 +16,28 @@ current_date=$(date +'%Y-%m-%d-%H-%M-%S')
 
 file_name="${name}-${current_date}"
 
-touch ${file_name}
+touch "${file_name}"
 
-ls -lah ${file_name}
+ls -lah "${file_name}"
 
-last -a  > ${file_name}
+last -a  > "${file_name}"
 
-cat $file_name
+cat "$file_name"
 
-stat $file_name
+stat "$file_name"
 
-gzip -9 ${file_name}
+gzip -9 "${file_name}"
 
 stat "${file_name}.gz"
 
 echo "delete the file ? (y/n)"
 
-read answer
+read -r answer
 
-if [ ${answer} == 'y' ] || [ ${answer} == 'yes' ]
+if [ "${answer}" == "y" ] || [ "${answer}" == "yes" ]
   then
     rm "${file_name}.gz"
-    echo 'done!'
+    echo "done!"
   else
-    ls -lah ${file_name}
+    ls -lah "${file_name}"
 fi
