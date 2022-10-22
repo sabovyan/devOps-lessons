@@ -7,6 +7,6 @@
 # IFC - prevents string spliting
 # for more information checkout out this article - http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
-IFC=$'\n\t'
+IFS=$'\n\t'
 
 echo "strict mode"
