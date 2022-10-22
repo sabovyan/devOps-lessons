@@ -12,5 +12,4 @@ then
   exit 1
 fi
 
-sudo cat /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-:;<=>?@[\]^_`{|}~' | head -c"${length}"; echo "\n"
-
+sudo cat /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-:;<=>?@[\]^_`{|}~' | head -c"${length}"; printf "\n"
