@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./strict.sh
+
 echo "enter a number"
 
 read -r number
