@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  
+  nginx:
+    image: nginx
+    ports: 
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    networks: 
+      - a_net
+  
+  web:
+    image: node
+    ports:
+      - 3002:3002
+    volumes:
+      - ./node:/app
+    working_dir: /app
+    command: node index.js
+    networks:
+      - a_net
+    restart: always
+
+networks:
+  a_net:
+    driver: bridge
