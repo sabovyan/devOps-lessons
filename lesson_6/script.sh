@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# utils
-ageRegEx='^[0-9]+$';
-
-
 show_help() {
   echo "provide <firstName> <lastName> <age> <gender>";  
 }
@@ -13,7 +9,7 @@ lastName=$2;
 age=$3;
 gender=$4;
 
-if [ ${firstName^^} = "HELP" ];
+if [ "${firstName^^}" = "HELP" ];
   then
     show_help
     exit 1;
