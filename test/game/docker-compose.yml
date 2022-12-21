@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  game_ngin:
+    image: nginx:latest
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - game_net
+
+  pacman:
+    image: golucky5/pacman
+    ports:
+      - 4444:80
+    restart: always
+    depends_on:
+      - game_ngin
+    networks:
+      - game_net
+
+  supermario:
+    image: pengbai/docker-supermario
+    ports:
+      - 4445:8080
+    restart: always
+    depends_on:
+      - game_ngin
+    networks:
+      - game_net
+
+  bomberman:
+    image: tuxes3/bomberman
+    ports:
+      - 8008:80
+    restart: always
+    depends_on:
+      - game_ngin
+    networks:
+      - game_net
+
+networks:
+  game_net:
+    driver: bridge
