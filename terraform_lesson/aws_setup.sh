@@ -1,0 +1,4 @@
+export AWS_ACCESS_KEY_ID=AKIA5ZFMRYROIFEEW244
+export AWS_SECRET_ACCESS_KEY=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
+
+echo 'you are all set'
