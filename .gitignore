@@ -2,3 +2,11 @@
 .terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
+
+# skip unzipped aws course
+aws/course_materials
+# aws ssh key
+test_es2_key.pem
+# access keys
+aws/Admin_accessKeys.sh
+f
