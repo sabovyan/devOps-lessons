@@ -9,4 +9,6 @@ aws/course_materials
 test_es2_key.pem
 # access keys
 aws/Admin_accessKeys.sh
-f
+
+# ignore aws setup
+aws_setup.sh
