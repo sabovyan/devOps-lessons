@@ -11,4 +11,4 @@ test_es2_key.pem
 aws/Admin_accessKeys.sh
 
 # ignore aws setup
-# aws_setup.sh
+aws_setup.sh
