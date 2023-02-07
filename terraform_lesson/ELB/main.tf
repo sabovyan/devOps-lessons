@@ -33,6 +33,7 @@ resource "aws_instance" "my_instance_1" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.wizard_3.id]
 
+
   tags = {
     "Name" = "my_instance_1"
   }
@@ -54,6 +55,7 @@ resource "aws_instance" "my_instance_2" {
   ami                    = data.aws_ami.amazon-linux-2.id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.wizard_3.id]
+
 
   user_data = <<EOF
 #!/bin/bash
@@ -97,4 +99,9 @@ resource "aws_security_group" "wizard_3" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+
+resource "aws_targ" "name" {
+
 }
