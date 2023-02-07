@@ -1,0 +1,15 @@
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+# skip unzipped aws course
+aws/course_materials
+
+# access keys
+aws/Admin_accessKeys.sh
+
+# ignore aws
+aws_setup.sh
+test_es2_key.pem
+*.pem
